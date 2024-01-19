@@ -4,8 +4,8 @@ package ma.egilekom.api.entitiespoc.exception;
 
 
 import jakarta.validation.constraints.Max;
-import ma.yc.api.common.exception.business.*;
-import ma.yc.api.common.exception.response.ErrorResponse;
+import ma.egilekom.api.entitiespoc.exception.business.*;
+import ma.egilekom.api.entitiespoc.exception.response.ErrorResponse;
 import org.hibernate.ObjectNotFoundException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

@@ -23,16 +23,16 @@ public class LoggingAspect {
     }
 
 
-    @Pointcut("within(com.example.myrh.service.impl..*)"+
-            " || within(com.example.myrh.controller.JobSeekerSocketController)")
+    @Pointcut(
+            " within(ma.egilekom.api.entitiespoc.controller..*)")
     public void loggingPointCut(){
     }
 
     @AfterThrowing(pointcut = "loggingPointCut() && springBeanPointcut() ", throwing = "e")
     public void logAfterThrowing(Exception e) throws Throwable {
-        log.info("**********");
+
         log.info("Exception in {}.{}() with cause = \'{}\' and exception = \'{}\'");
-        log.info("**********");
+
     }
 
     @Around("loggingPointCut()")
