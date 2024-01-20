@@ -29,7 +29,7 @@ public abstract class BaseEntity  implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Long id;
 
-    private String version;
+    private String version = UUID.randomUUID().toString();
 
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @Column(name = "CREATED_AT")

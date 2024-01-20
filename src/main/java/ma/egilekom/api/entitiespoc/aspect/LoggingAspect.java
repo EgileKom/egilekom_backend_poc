@@ -14,7 +14,6 @@ import org.springframework.stereotype.Component;
 public class LoggingAspect {
 
 
-
     @Pointcut("within(@org.springframework.stereotype.Repository *)" +
             " || within(@org.springframework.stereotype.Service *)" +
             " || within(@org.springframework.web.bind.annotation.RestController *)")
@@ -24,8 +23,11 @@ public class LoggingAspect {
 
 
     @Pointcut(
-            " within(ma.egilekom.api.entitiespoc.controller..*)")
-    public void loggingPointCut(){
+            " within(ma.egilekom.api.entitiespoc.controller..*)"
+                    + " || within(ma.egilekom.api.entitiespoc.repository..*)"
+                    + " || within(ma.egilekom.api.entitiespoc.service..*)"
+    )
+    public void loggingPointCut() {
     }
 
     @AfterThrowing(pointcut = "loggingPointCut() && springBeanPointcut() ", throwing = "e")

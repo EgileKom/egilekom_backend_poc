@@ -14,12 +14,5 @@ public class EgilekomEntitiesPocApplication {
         SpringApplication.run(EgilekomEntitiesPocApplication.class, args);
     }
 
-    @Bean
-    CommandLineRunner commandLineRunner(){
-        return args -> {
-            log.info("Hello World");
-            System.out.println("Hello World");
-        };
-    }
 
 }
